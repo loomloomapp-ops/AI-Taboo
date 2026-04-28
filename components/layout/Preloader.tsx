@@ -24,8 +24,8 @@ export function Preloader() {
     document.body.style.overflow = "hidden";
     startedAt.current = performance.now();
 
-    const minDuration = 1500;
-    const maxStall = 90;
+    const minDuration = 2700;
+    const maxStall = 88;
     let raf = 0;
     let target = 0;
     let current = 0;
@@ -41,9 +41,9 @@ export function Preloader() {
       const minProgress = Math.min(maxStall, (elapsed / minDuration) * maxStall);
       target = pageReady ? 100 : Math.max(target, minProgress);
       if (!pageReady && target < maxStall) {
-        target = Math.min(maxStall, target + Math.random() * 1.6 + 0.4);
+        target = Math.min(maxStall, target + Math.random() * 0.9 + 0.25);
       }
-      current += (target - current) * 0.12;
+      current += (target - current) * 0.075;
       if (current > 99.5 && pageReady) current = 100;
       setProgress(current);
 
@@ -51,7 +51,7 @@ export function Preloader() {
         raf = requestAnimationFrame(tick);
       } else {
         setProgress(100);
-        setTimeout(() => setDone(true), 320);
+        setTimeout(() => setDone(true), 480);
       }
     };
     raf = requestAnimationFrame(tick);
