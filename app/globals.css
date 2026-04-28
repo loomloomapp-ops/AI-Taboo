@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Akony";
+  src: url("/fonts/AKONY.woff2") format("woff2"),
+    url("/fonts/AKONY.woff") format("woff");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("/fonts/Involve-VF.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("/fonts/Involve-Oblique-VF.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --carbon: #1d1d1b;
+  --carbon-deep: #0e0e0d;
+  --bone: #ffffff;
+  --taboo: #da2f36;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: var(--carbon-deep);
+  color: var(--bone);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Involve", ui-sans-serif, system-ui, sans-serif;
+  background: var(--carbon-deep);
+  color: var(--bone);
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+::selection {
+  background: var(--taboo);
+  color: var(--bone);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a09;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a28;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--taboo);
+}
+
+.font-display {
+  font-family: "Akony", "Cabinet Grotesk", system-ui, sans-serif;
+  font-feature-settings: "ss01", "ss02";
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='200' height='200' filter='url(%23n)'/></svg>");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.hairline-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hairline-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shadow-card-inset {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  background: var(--taboo);
+  color: var(--bone);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 250ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 32px -12px rgba(218, 47, 54, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btn-primary:hover {
+  background: #e63a40;
+  box-shadow: 0 14px 40px -10px rgba(218, 47, 54, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.btn-primary:active {
+  transform: scale(0.98) translateY(1px);
+  background: var(--taboo-blood, #aa1f14);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--bone);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+.btn-ghost:active {
+  transform: scale(0.98);
+}
+
+.btn-trailing-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.18);
+  margin-left: 0.25rem;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-primary:hover .btn-trailing-icon,
+.btn-ghost:hover .btn-trailing-icon {
+  transform: translate(2px, -1px);
+}
+
+.glass {
+  background: rgba(14, 14, 13, 0.7);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section-pad {
+  padding-top: clamp(5rem, 12vw, 9rem);
+  padding-bottom: clamp(5rem, 12vw, 9rem);
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 4rem);
+}
+
+.kpi-num {
+  font-family: "JetBrains Mono", "Geist Mono", ui-monospace, monospace;
+  font-feature-settings: "tnum";
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--taboo);
+  box-shadow: 0 0 12px rgba(218, 47, 54, 0.9);
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.headline {
+  font-family: "Akony", "Cabinet Grotesk", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+@media (max-width: 768px) {
+  .headline {
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+}
+
+.redacted {
+  position: relative;
+  display: inline-block;
+  filter: blur(6px);
+  user-select: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px #1d1d1b inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.diagonal-fade {
+  -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+}
+
+.glow-red {
+  background: radial-gradient(
+    closest-side,
+    rgba(218, 47, 54, 0.35),
+    rgba(218, 47, 54, 0.06) 60%,
+    transparent 80%
+  );
+  filter: blur(40px);
+}
