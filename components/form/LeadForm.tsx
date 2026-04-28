@@ -64,10 +64,10 @@ export function LeadForm() {
     <section id="form" className="section-pad relative">
       <div className="absolute inset-0 dot-grid opacity-30 diagonal-fade pointer-events-none" aria-hidden />
       <div className="container-x relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 lg:items-stretch">
           <ScrollReveal className="lg:col-span-5">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.form.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.55rem,3.6vw,2.85rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
             <p className="mt-6 text-ash text-base sm:text-lg leading-relaxed text-pretty max-w-md">{t.form.sub}</p>
@@ -82,8 +82,8 @@ export function LeadForm() {
             </ul>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.15} className="lg:col-span-7">
-            <div className="rounded-card-lg border border-hairline bg-carbon p-6 sm:p-8 lg:p-10 shadow-card-inset">
+          <ScrollReveal delay={0.15} className="lg:col-span-7 lg:h-full">
+            <div className="rounded-card-lg border border-hairline bg-carbon p-6 sm:p-8 lg:p-10 shadow-card-inset h-full flex flex-col justify-between min-h-[520px]">
               <AnimatePresence mode="wait">
                 {status === "success" ? (
                   <motion.div
@@ -111,7 +111,7 @@ export function LeadForm() {
                     onSubmit={submit}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="space-y-7"
+                    className="flex flex-col h-full gap-7"
                     noValidate
                   >
                     <div className="flex items-center justify-between">
@@ -130,6 +130,7 @@ export function LeadForm() {
                       </div>
                     </div>
 
+                    <div className="flex-1 flex flex-col">
                     <AnimatePresence mode="wait">
                       {step === 0 && (
                         <motion.div
@@ -138,6 +139,7 @@ export function LeadForm() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.35 }}
+                          className="flex-1 flex flex-col justify-center"
                         >
                           <Label>{t.form.niche}</Label>
                           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3">
@@ -170,6 +172,7 @@ export function LeadForm() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.35 }}
+                          className="flex-1 flex flex-col justify-center"
                         >
                           <Label>{t.form.budget}</Label>
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
@@ -202,6 +205,7 @@ export function LeadForm() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.35 }}
+                          className="flex-1 flex flex-col justify-center"
                         >
                           <Label>{t.form.telegram}</Label>
                           <input
@@ -235,6 +239,7 @@ export function LeadForm() {
                         </motion.div>
                       )}
                     </AnimatePresence>
+                    </div>
 
                     <div className="flex items-center justify-between gap-3 pt-2">
                       <button

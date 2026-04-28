@@ -49,20 +49,25 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="headline mt-5 sm:mt-6 text-balance text-[clamp(2.3rem,5.6vw,5rem)]"
+              className="headline mt-5 sm:mt-6 text-balance text-[clamp(1.8rem,4.4vw,3.75rem)]"
             >
-              <span className="block">{titleLines[0]}</span>
-              <span className="block">
-                {titleLines[1]?.replace(".", "")}
-                <span className="text-taboo">.</span>
-              </span>
+              {titleLines.map((l, i) => {
+                const isLast = i === titleLines.length - 1;
+                const text = isLast ? l.replace(".", "") : l;
+                return (
+                  <span key={i} className="block">
+                    {text}
+                    {isLast && <span className="text-taboo">.</span>}
+                  </span>
+                );
+              })}
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-6 sm:mt-8 max-w-xl text-base sm:text-lg leading-relaxed text-ash text-pretty"
+              className="mt-5 sm:mt-7 max-w-xl text-sm sm:text-base lg:text-lg leading-relaxed text-ash text-pretty"
             >
               {t.hero.sub}
             </motion.p>
@@ -115,7 +120,7 @@ export function Hero() {
       <div className="mt-16 sm:mt-24 hairline-top hairline-bottom py-5 overflow-hidden">
         <div className="flex gap-12 whitespace-nowrap animate-marquee" style={{ width: "max-content" }}>
           {[...platforms, ...platforms, ...platforms].map((p, i) => (
-            <div key={i} className="flex items-center gap-3 font-display text-xl sm:text-2xl uppercase tracking-tighter2 text-ash">
+            <div key={i} className="flex items-center gap-3 font-display text-base sm:text-xl lg:text-2xl uppercase tracking-tighter2 text-ash">
               {p}
               <span className="w-1.5 h-1.5 rounded-full bg-taboo" />
             </div>

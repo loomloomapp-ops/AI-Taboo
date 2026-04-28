@@ -16,7 +16,7 @@ export function FinalCTA() {
       <BrandMark name="circle" size={170} className="hidden lg:block absolute -bottom-4 left-[4%] opacity-30 pointer-events-none" />
       <div className="container-x relative">
         <ScrollReveal>
-          <h2 className="headline text-balance text-[clamp(2.2rem,6.5vw,5.5rem)]">
+          <h2 className="headline text-balance text-[clamp(1.75rem,5vw,4rem)]">
             <span className="block">{lines[0]}</span>
             <span className="block text-taboo">{lines[1]}</span>
           </h2>

@@ -16,10 +16,10 @@ export function FAQ() {
     <section id="faq" className="section-pad relative overflow-hidden">
       <BrandMark name="curve-right" size={140} className="hidden lg:block absolute top-24 left-[40%] opacity-50 pointer-events-none" rotate={-10} />
       <div className="container-x relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-          <ScrollReveal className="lg:col-span-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 lg:items-start">
+          <ScrollReveal className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.faq.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(1.65rem,3.4vw,2.6rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.45rem,2.8vw,2.2rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
           </ScrollReveal>

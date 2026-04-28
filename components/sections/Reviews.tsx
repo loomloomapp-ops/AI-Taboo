@@ -117,13 +117,13 @@ export function Reviews() {
           <ScrollReveal>
             <span className="eyebrow"><span className="eyebrow-dot" />{t.reviews.eyebrow}</span>
             <div className="relative">
-              <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
+              <h2 className="headline mt-5 text-balance text-[clamp(1.55rem,3.6vw,2.85rem)]">
                 {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
               </h2>
               <BrandMark
                 name="hearts"
-                size={90}
-                className="absolute -top-6 -right-2 sm:-right-10 opacity-90 pointer-events-none"
+                size={70}
+                className="hidden sm:block absolute -top-4 -right-12 lg:-right-20 opacity-90 pointer-events-none"
               />
             </div>
           </ScrollReveal>

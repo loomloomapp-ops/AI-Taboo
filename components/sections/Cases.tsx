@@ -37,7 +37,7 @@ export function Cases() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-16">
           <ScrollReveal>
             <span className="eyebrow"><span className="eyebrow-dot" />{t.cases.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.55rem,3.6vw,2.85rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
           </ScrollReveal>
