@@ -2,6 +2,7 @@
 
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { CountUp } from "@/components/ui/CountUp";
 
 export function Advantages() {
   const { t } = useLocale();
@@ -12,7 +13,7 @@ export function Advantages() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-14 lg:mb-20">
           <ScrollReveal className="lg:col-span-7">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.advantages.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(2.2rem,5.5vw,4.5rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
           </ScrollReveal>
@@ -25,9 +26,11 @@ export function Advantages() {
           {t.advantages.strip.map((s, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="rounded-card-lg border border-hairline bg-carbon p-5 sm:p-7 h-full">
-                <div className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.85] text-bone tracking-tightest">
-                  {s.num}
-                </div>
+                <CountUp
+                  value={s.num}
+                  duration={1800}
+                  className="font-display text-[clamp(2.4rem,6vw,4.25rem)] leading-[0.85] text-bone tracking-tightest block"
+                />
                 <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-ash leading-relaxed">{s.label}</div>
               </div>
             </ScrollReveal>

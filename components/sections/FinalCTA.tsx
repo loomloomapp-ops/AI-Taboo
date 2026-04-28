@@ -13,7 +13,7 @@ export function FinalCTA() {
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[600px] glow-red opacity-50 pointer-events-none" aria-hidden />
       <div className="container-x relative">
         <ScrollReveal>
-          <h2 className="headline text-balance text-[clamp(2.6rem,9vw,8rem)]">
+          <h2 className="headline text-balance text-[clamp(2.2rem,6.5vw,5.5rem)]">
             <span className="block">{lines[0]}</span>
             <span className="block text-taboo">{lines[1]}</span>
           </h2>

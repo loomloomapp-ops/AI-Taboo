@@ -17,7 +17,7 @@ export function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <ScrollReveal className="lg:col-span-4">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.faq.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(2.2rem,5vw,4rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.2vw,3.25rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
           </ScrollReveal>

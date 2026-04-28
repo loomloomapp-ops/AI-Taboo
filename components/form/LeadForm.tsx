@@ -66,7 +66,7 @@ export function LeadForm() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <ScrollReveal className="lg:col-span-5">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.form.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(2.2rem,5.5vw,4.5rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
             <p className="mt-6 text-ash text-base sm:text-lg leading-relaxed text-pretty max-w-md">{t.form.sub}</p>

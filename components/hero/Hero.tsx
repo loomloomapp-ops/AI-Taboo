@@ -4,6 +4,7 @@ import { useLocale } from "@/lib/i18n/context";
 import { TELEGRAM_URL } from "@/lib/i18n/dict";
 import { HeroDashboard } from "./HeroDashboard";
 import { TelegramIcon, ArrowUpRight } from "@/components/ui/ArrowIcon";
+import { CountUp } from "@/components/ui/CountUp";
 import { motion } from "framer-motion";
 
 const platforms = [
@@ -45,7 +46,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="headline mt-5 sm:mt-6 text-balance text-[clamp(2.6rem,7.2vw,7rem)]"
+              className="headline mt-5 sm:mt-6 text-balance text-[clamp(2.3rem,5.6vw,5rem)]"
             >
               <span className="block">{titleLines[0]}</span>
               <span className="block">
@@ -87,7 +88,7 @@ export function Hero() {
             >
               {[t.hero.trust1, t.hero.trust2, t.hero.trust3, t.hero.trust4].map((s, i) => (
                 <div key={i} className="flex flex-col gap-1">
-                  <span className="kpi-num text-bone text-base sm:text-lg">{s.split(" ")[0]}</span>
+                  <CountUp value={s.split(" ")[0]} className="kpi-num text-bone text-base sm:text-lg" />
                   <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-ash-dim">
                     {s.split(" ").slice(1).join(" ")}
                   </span>
@@ -110,7 +111,7 @@ export function Hero() {
       <div className="mt-16 sm:mt-24 hairline-top hairline-bottom py-5 overflow-hidden">
         <div className="flex gap-12 whitespace-nowrap animate-marquee" style={{ width: "max-content" }}>
           {[...platforms, ...platforms, ...platforms].map((p, i) => (
-            <div key={i} className="flex items-center gap-3 font-display text-2xl sm:text-3xl uppercase tracking-tighter2 text-ash">
+            <div key={i} className="flex items-center gap-3 font-display text-xl sm:text-2xl uppercase tracking-tighter2 text-ash">
               {p}
               <span className="w-1.5 h-1.5 rounded-full bg-taboo" />
             </div>

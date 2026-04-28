@@ -14,7 +14,7 @@ export function Manifesto() {
           <span className="eyebrow"><span className="eyebrow-dot" />{t.manifesto.eyebrow}</span>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="headline mt-6 text-balance text-[clamp(3rem,9vw,9rem)]">
+          <h2 className="headline mt-6 text-balance text-[clamp(2.4rem,6.5vw,5.5rem)]">
             <span className="block">{lines[0]}</span>
             <span className="block text-taboo">{lines[1]}</span>
           </h2>

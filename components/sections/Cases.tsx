@@ -3,7 +3,6 @@
 import { useRef, useState, useEffect } from "react";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { motion } from "framer-motion";
 
 export function Cases() {
   const { t } = useLocale();
@@ -37,7 +36,7 @@ export function Cases() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-16">
           <ScrollReveal>
             <span className="eyebrow"><span className="eyebrow-dot" />{t.cases.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(2.2rem,5.5vw,4.5rem)]">
+            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
           </ScrollReveal>
@@ -50,22 +49,21 @@ export function Cases() {
       <div className="relative">
         <div
           ref={scrollerRef}
-          className="no-scrollbar flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-6 px-[max(1rem,calc((100vw-1440px)/2+1rem))] sm:px-[max(1rem,calc((100vw-1440px)/2+4rem))]"
+          className="no-scrollbar flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pt-3 pb-6 px-[max(1rem,calc((100vw-1440px)/2+1rem))] sm:px-[max(1rem,calc((100vw-1440px)/2+4rem))]"
         >
           {items.map((c, i) => {
             const isRevealed = revealed[i];
             const trendMax = Math.max(...c.trend);
             return (
-              <motion.div
+              <div
                 key={i}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setRevealed((r) => ({ ...r, [i]: true }))}
                 onClick={() => setRevealed((r) => ({ ...r, [i]: !r[i] }))}
-                className="snap-start shrink-0 w-[85vw] sm:w-[60vw] lg:w-[42vw] xl:w-[32vw] max-w-[520px] cursor-pointer"
+                className="snap-start shrink-0 w-[85vw] sm:w-[60vw] lg:w-[42vw] xl:w-[32vw] max-w-[520px] cursor-pointer group"
               >
-                <div className="relative rounded-card-lg border border-hairline bg-carbon p-6 sm:p-7 shadow-card-inset overflow-hidden">
-                  <div className="absolute -top-24 -right-24 w-72 h-72 glow-red opacity-30 pointer-events-none" aria-hidden />
+                <div className="relative rounded-card-lg border border-hairline bg-carbon p-6 sm:p-7 shadow-card-inset overflow-hidden transition-all duration-500 ease-spring group-hover:border-taboo/50 group-hover:bg-carbon-soft">
+                  <div className="absolute -top-24 -right-24 w-72 h-72 glow-red opacity-30 pointer-events-none transition-opacity duration-500 group-hover:opacity-70" aria-hidden />
+                  <div className="absolute inset-0 rounded-card-lg pointer-events-none ring-1 ring-inset ring-taboo/0 group-hover:ring-taboo/30 transition-all duration-500" aria-hidden />
                   <div className="flex items-center justify-between mb-4 relative">
                     <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim">
                       CASE / {String(i + 1).padStart(2, "0")}
@@ -102,7 +100,7 @@ export function Cases() {
                     <span className="text-taboo">{isRevealed ? "[ DETAILS ON CALL ]" : "[ HOVER / TAP ]"}</span>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
