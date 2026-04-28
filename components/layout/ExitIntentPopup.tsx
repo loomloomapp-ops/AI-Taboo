@@ -94,14 +94,14 @@ export function ExitIntentPopup() {
 
             {status === "success" ? (
               <div className="py-4 text-center">
-                <h3 className="font-display uppercase tracking-tighter2 text-2xl text-bone mb-2">
+                <h3 className="font-display uppercase tracking-tighter2 text-xl text-bone mb-2">
                   {t.form.success}
                 </h3>
               </div>
             ) : (
               <>
                 <span className="eyebrow"><span className="eyebrow-dot" />exit · 24h</span>
-                <h3 className="font-display uppercase tracking-tighter2 text-3xl sm:text-4xl text-bone mt-4 leading-[0.95]">
+                <h3 className="font-display uppercase tracking-tighter2 text-2xl sm:text-3xl text-bone mt-4 leading-[1]">
                   {t.exitPopup.title}
                 </h3>
                 <p className="mt-3 text-ash text-sm sm:text-base leading-relaxed text-pretty">

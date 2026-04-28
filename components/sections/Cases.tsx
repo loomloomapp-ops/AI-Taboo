@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Cases() {
   const { t } = useLocale();
@@ -77,7 +78,17 @@ export function Cases() {
                   <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ash-dim mb-6 relative">{c.period}</div>
 
                   <div className="grid grid-cols-3 gap-3 mb-6 relative">
-                    <Metric label="ROAS" value={c.roas} blurred={!isRevealed} accent />
+                    <div className="relative">
+                      <Metric label="ROAS" value={c.roas} blurred={!isRevealed} accent />
+                      {isRevealed && (
+                        <BrandMark
+                          name="arrow-up"
+                          size={42}
+                          className="absolute -top-7 -right-3 opacity-90 pointer-events-none"
+                          rotate={12}
+                        />
+                      )}
+                    </div>
                     <Metric label="SPEND" value={c.spend} blurred={!isRevealed} />
                     <Metric label="LEADS" value={c.leads} blurred={!isRevealed} />
                   </div>

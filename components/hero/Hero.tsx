@@ -5,6 +5,7 @@ import { TELEGRAM_URL } from "@/lib/i18n/dict";
 import { HeroDashboard } from "./HeroDashboard";
 import { TelegramIcon, ArrowUpRight } from "@/components/ui/ArrowIcon";
 import { CountUp } from "@/components/ui/CountUp";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { motion } from "framer-motion";
 
 const platforms = [
@@ -28,6 +29,8 @@ export function Hero() {
     <section id="top" className="relative pt-32 sm:pt-40 lg:pt-44 pb-12 lg:pb-20 overflow-hidden">
       <div className="absolute inset-0 dot-grid opacity-60 diagonal-fade pointer-events-none" aria-hidden />
       <div className="absolute -top-40 -right-40 w-[600px] h-[600px] glow-red opacity-50 pointer-events-none" aria-hidden />
+      <BrandMark name="zigzag" size={110} className="hidden lg:block absolute top-32 left-[42%] opacity-50 -rotate-12 pointer-events-none" />
+      <BrandMark name="exclaim" size={70} className="hidden md:block absolute top-44 right-[5%] opacity-80 pointer-events-none" rotate={8} />
 
       <div className="container-x">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -70,9 +73,10 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.35 }}
               className="mt-8 flex flex-wrap items-center gap-3"
             >
-              <a href="#form" className="btn-primary group">
+              <a href="#form" className="btn-primary group relative">
                 {t.hero.ctaPrimary}
                 <span className="btn-trailing-icon"><ArrowUpRight size={12} /></span>
+                <BrandMark name="curve-left" size={64} className="hidden sm:block absolute -top-10 -left-12 opacity-90 pointer-events-none" rotate={-15} />
               </a>
               <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <TelegramIcon size={14} />

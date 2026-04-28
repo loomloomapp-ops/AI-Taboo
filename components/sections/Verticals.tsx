@@ -3,6 +3,7 @@
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ArrowUpRight } from "@/components/ui/ArrowIcon";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Verticals() {
   const { t } = useLocale();
@@ -21,8 +22,9 @@ export function Verticals() {
   ];
 
   return (
-    <section id="verticals" className="section-pad relative">
-      <div className="container-x">
+    <section id="verticals" className="section-pad relative overflow-hidden">
+      <BrandMark name="strokes" size={180} className="hidden lg:block absolute right-0 top-12 opacity-25 pointer-events-none" rotate={-12} />
+      <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
           <ScrollReveal className="lg:col-span-7">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.verticals.eyebrow}</span>
@@ -56,7 +58,7 @@ export function Verticals() {
                   </span>
                 </div>
                 <div className="relative">
-                  <div className="font-display uppercase tracking-tighter2 text-2xl sm:text-3xl lg:text-4xl text-bone leading-[0.95]">
+                  <div className="font-display uppercase tracking-tighter2 text-xl sm:text-2xl lg:text-[1.875rem] text-bone leading-[1]">
                     {v.name}
                   </div>
                   <div className="mt-3 max-w-md text-sm sm:text-[15px] text-ash leading-relaxed text-pretty">

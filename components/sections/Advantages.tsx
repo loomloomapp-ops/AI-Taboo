@@ -3,13 +3,15 @@
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CountUp } from "@/components/ui/CountUp";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Advantages() {
   const { t } = useLocale();
   const lines = t.advantages.title.split("\n");
   return (
-    <section id="advantages" className="section-pad relative bg-carbon-deep">
-      <div className="container-x">
+    <section id="advantages" className="section-pad relative bg-carbon-deep overflow-hidden">
+      <BrandMark name="comet" size={200} className="hidden lg:block absolute -left-10 top-32 opacity-25 pointer-events-none" rotate={20} />
+      <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-14 lg:mb-20">
           <ScrollReveal className="lg:col-span-7">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.advantages.eyebrow}</span>
@@ -56,7 +58,8 @@ export function Advantages() {
         </div>
 
         <ScrollReveal delay={0.1}>
-          <div className="mt-14 lg:mt-20">
+          <div className="mt-14 lg:mt-20 relative">
+            <BrandMark name="star" size={70} className="absolute -top-10 right-0 sm:right-8 opacity-90 pointer-events-none" rotate={-8} />
             <div className="flex items-baseline justify-between mb-6">
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">TEAM / 5 SPECIALISTS</span>
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">PER PROJECT</span>

@@ -5,6 +5,7 @@ import { useLocale } from "@/lib/i18n/context";
 import { TELEGRAM_URL } from "@/lib/i18n/dict";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { ArrowUpRight, TelegramIcon } from "@/components/ui/ArrowIcon";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { motion, AnimatePresence } from "framer-motion";
 
 const niches = ["Офіси", "Табачка", "Adult", "Dating", "Товарка", "Nutra", "Sex shops", "Binary options", "Інше"];
@@ -71,10 +72,10 @@ export function LeadForm() {
             </h2>
             <p className="mt-6 text-ash text-base sm:text-lg leading-relaxed text-pretty max-w-md">{t.form.sub}</p>
 
-            <ul className="mt-8 space-y-3 max-w-md">
+            <ul className="mt-8 space-y-4 max-w-md">
               {t.form.bullets.map((b, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm sm:text-[15px] text-ash">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-taboo shrink-0" />
+                  <BrandMark name="check" size={22} className="shrink-0 -mt-0.5" />
                   <span>{b}</span>
                 </li>
               ))}
@@ -92,10 +93,8 @@ export function LeadForm() {
                     transition={{ duration: 0.5 }}
                     className="py-10 text-center"
                   >
-                    <div className="w-14 h-14 mx-auto rounded-full bg-taboo/15 border border-taboo/40 flex items-center justify-center mb-5">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                        <path d="M5 11.5L9.5 16L17 7" stroke="#DA2F36" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                    <div className="mx-auto mb-4 flex items-center justify-center">
+                      <BrandMark name="check" size={90} />
                     </div>
                     <h3 className="font-display uppercase tracking-tighter2 text-2xl sm:text-3xl text-bone mb-3">
                       {t.form.success}

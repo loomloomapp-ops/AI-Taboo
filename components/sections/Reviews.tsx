@@ -1,36 +1,90 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 const screenshots = Array.from({ length: 8 }, (_, i) => `/reviews/tg-${i + 1}.jpeg`);
 
 export function Reviews() {
   const { t } = useLocale();
   const lines = t.reviews.title.split("\n");
-  const [active, setActive] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
   const [lightbox, setLightbox] = useState<number | null>(null);
-  const [dragX, setDragX] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [slotWidth, setSlotWidth] = useState(320);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const isAdjusting = useRef(false);
   const n = screenshots.length;
+  const tripled = [...screenshots, ...screenshots, ...screenshots];
 
-  useEffect(() => {
-    const measure = () => {
-      const w = containerRef.current?.clientWidth ?? 320;
-      const card = Math.min(300, Math.max(220, w * 0.32));
-      setSlotWidth(card + 28);
-    };
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+  const itemWidthRef = useRef(0);
+
+  const recompute = useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return 0;
+    const first = el.children[0] as HTMLElement | undefined;
+    if (!first) return 0;
+    const style = getComputedStyle(el);
+    const gap = parseFloat(style.columnGap || style.gap || "0");
+    const w = first.getBoundingClientRect().width + gap;
+    itemWidthRef.current = w;
+    return w;
   }, []);
 
-  const next = useCallback(() => setActive((a) => (a + 1) % n), [n]);
-  const prev = useCallback(() => setActive((a) => (a - 1 + n) % n), [n]);
+  useLayoutEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const init = () => {
+      const w = recompute();
+      if (!w) return;
+      isAdjusting.current = true;
+      el.scrollLeft = w * n;
+      requestAnimationFrame(() => {
+        isAdjusting.current = false;
+      });
+    };
+    init();
+    const ro = new ResizeObserver(init);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [n, recompute]);
+
+  const onScroll = useCallback(() => {
+    const el = trackRef.current;
+    if (!el || isAdjusting.current) return;
+    const w = itemWidthRef.current || recompute();
+    if (!w) return;
+    const center = el.scrollLeft + el.clientWidth / 2;
+    const idx = Math.round((center - w / 2) / w);
+    setActiveIdx(((idx % n) + n) % n);
+
+    const total = w * n;
+    if (el.scrollLeft < w * 0.5) {
+      isAdjusting.current = true;
+      el.scrollLeft += total;
+      requestAnimationFrame(() => {
+        isAdjusting.current = false;
+      });
+    } else if (el.scrollLeft > w * (n * 2 + 0.5)) {
+      isAdjusting.current = true;
+      el.scrollLeft -= total;
+      requestAnimationFrame(() => {
+        isAdjusting.current = false;
+      });
+    }
+  }, [n, recompute]);
+
+  const scrollBy = useCallback(
+    (dir: -1 | 1) => {
+      const el = trackRef.current;
+      const w = itemWidthRef.current || recompute();
+      if (!el || !w) return;
+      el.scrollTo({ left: el.scrollLeft + dir * w, behavior: "smooth" });
+    },
+    [recompute]
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -40,12 +94,12 @@ export function Reviews() {
         if (e.key === "ArrowLeft") setLightbox((v) => (v === null ? null : (v - 1 + n) % n));
         return;
       }
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") scrollBy(1);
+      if (e.key === "ArrowLeft") scrollBy(-1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, n, next, prev]);
+  }, [lightbox, n, scrollBy]);
 
   useEffect(() => {
     if (lightbox !== null) {
@@ -56,22 +110,22 @@ export function Reviews() {
     }
   }, [lightbox]);
 
-  const offset = (i: number) => {
-    let d = i - active;
-    if (d > n / 2) d -= n;
-    if (d < -n / 2) d += n;
-    return d;
-  };
-
   return (
     <section id="reviews" className="section-pad relative overflow-hidden">
       <div className="container-x">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 lg:mb-16">
           <ScrollReveal>
             <span className="eyebrow"><span className="eyebrow-dot" />{t.reviews.eyebrow}</span>
-            <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
-              {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
-            </h2>
+            <div className="relative">
+              <h2 className="headline mt-5 text-balance text-[clamp(1.9rem,4.4vw,3.5rem)]">
+                {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
+              </h2>
+              <BrandMark
+                name="hearts"
+                size={90}
+                className="absolute -top-6 -right-2 sm:-right-10 opacity-90 pointer-events-none"
+              />
+            </div>
           </ScrollReveal>
           <ScrollReveal delay={0.15} className="max-w-md">
             <p className="text-ash text-base leading-relaxed">{t.reviews.sub}</p>
@@ -79,49 +133,25 @@ export function Reviews() {
         </div>
       </div>
 
-      <div
-        ref={containerRef}
-        className="relative h-[560px] sm:h-[620px] flex items-center justify-center select-none"
-      >
-        <motion.div
-          className="absolute inset-0"
-          drag="x"
-          dragElastic={0.2}
-          dragConstraints={{ left: 0, right: 0 }}
-          onDrag={(_, info) => setDragX(info.offset.x)}
-          onDragEnd={(_, info) => {
-            setDragX(0);
-            if (info.offset.x < -60 || info.velocity.x < -300) next();
-            else if (info.offset.x > 60 || info.velocity.x > 300) prev();
-          }}
+      <div className="relative">
+        <div
+          ref={trackRef}
+          onScroll={onScroll}
+          className="no-scrollbar flex gap-5 sm:gap-7 overflow-x-auto snap-x snap-mandatory pt-3 pb-6 px-[calc(50vw-150px)] sm:px-[calc(50vw-160px)]"
+          style={{ scrollBehavior: "auto" }}
         >
-          {screenshots.map((src, i) => {
-            const o = offset(i);
-            const abs = Math.abs(o);
-            if (abs > 3) return null;
-            const x = o * slotWidth + dragX;
-            const scale = abs === 0 ? 1 : abs === 1 ? 0.86 : 0.7;
-            const opacity = abs === 0 ? 1 : abs === 1 ? 0.65 : 0.3;
-            const z = 10 - abs;
-            const blur = abs >= 2 ? "blur(2px)" : "blur(0px)";
+          {tripled.map((src, i) => {
+            const realIdx = i % n;
             return (
-              <motion.div
-                key={src}
-                className="absolute top-1/2 left-1/2 cursor-pointer"
-                animate={{ x, scale, opacity, filter: blur }}
-                transition={{ type: "spring", stiffness: 220, damping: 28 }}
-                style={{ zIndex: z, translateX: "-50%", translateY: "-50%" }}
-                onClick={() => {
-                  if (abs === 0) setLightbox(i);
-                  else setActive(i);
-                }}
-                role="button"
-                aria-label={abs === 0 ? "Open review" : "Switch to this review"}
+              <div
+                key={i}
+                className="snap-center shrink-0 cursor-pointer transition-transform duration-300 hover:-translate-y-1"
+                onClick={() => setLightbox(realIdx)}
               >
                 <PhoneFrame>
                   <Image
                     src={src}
-                    alt={`Telegram review ${i + 1}`}
+                    alt={`Telegram review ${realIdx + 1}`}
                     width={600}
                     height={1200}
                     className="block w-full h-full object-cover pointer-events-none"
@@ -129,20 +159,20 @@ export function Reviews() {
                     draggable={false}
                   />
                 </PhoneFrame>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
         <button
-          onClick={prev}
+          onClick={() => scrollBy(-1)}
           aria-label="Prev"
           className="absolute left-3 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full glass border border-hairline-strong flex items-center justify-center hover:bg-carbon transition-colors"
         >
           <span className="rotate-180 inline-block">→</span>
         </button>
         <button
-          onClick={next}
+          onClick={() => scrollBy(1)}
           aria-label="Next"
           className="absolute right-3 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full glass border border-hairline-strong flex items-center justify-center hover:bg-carbon transition-colors"
         >
@@ -152,16 +182,23 @@ export function Reviews() {
 
       <div className="container-x mt-6 flex items-center justify-between">
         <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">
-          {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
+          {String(activeIdx + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
         </span>
         <div className="flex items-center gap-1.5">
           {screenshots.map((_, i) => (
             <button
               key={i}
-              onClick={() => setActive(i)}
+              onClick={() => {
+                const el = trackRef.current;
+                const w = itemWidthRef.current || recompute();
+                if (!el || !w) return;
+                const currentBlock = Math.floor(el.scrollLeft / (w * n));
+                const target = (currentBlock * n + i) * w;
+                el.scrollTo({ left: target, behavior: "smooth" });
+              }}
               aria-label={`Go to review ${i + 1}`}
               className={`h-1 rounded-full transition-all duration-500 ${
-                active === i ? "w-8 bg-taboo" : "w-3 bg-hairline-strong hover:bg-ash"
+                activeIdx === i ? "w-8 bg-taboo" : "w-3 bg-hairline-strong hover:bg-ash"
               }`}
             />
           ))}
