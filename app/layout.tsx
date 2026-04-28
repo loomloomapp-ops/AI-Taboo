@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/context";
+import { Preloader } from "@/components/layout/Preloader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taboo-traffic.agency"),
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="uk" className="bg-carbon-deep">
       <body className="bg-carbon-deep text-bone antialiased">
         <LocaleProvider>
+          <Preloader />
           <div className="grain" aria-hidden />
           {children}
         </LocaleProvider>
