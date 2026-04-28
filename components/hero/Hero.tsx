@@ -76,17 +76,21 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-8 flex flex-wrap items-center gap-3 relative"
             >
-              <a href="#form" className="btn-primary group relative">
+              <a href="#form" className="btn-primary">
                 {t.hero.ctaPrimary}
                 <span className="btn-trailing-icon"><ArrowUpRight size={12} /></span>
-                <BrandMark name="curve-left" size={64} className="hidden sm:block absolute -top-10 -left-12 opacity-90 pointer-events-none" rotate={-15} />
               </a>
               <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn-ghost">
                 <TelegramIcon size={14} />
                 {t.hero.ctaSecondary}
               </a>
+              <BrandMark
+                name="curve-left"
+                size={92}
+                className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-3 lg:ml-5 opacity-95 pointer-events-none"
+              />
             </motion.div>
 
             <motion.div

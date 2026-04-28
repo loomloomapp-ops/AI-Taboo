@@ -139,10 +139,10 @@ export function LeadForm() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.35 }}
-                          className="flex-1 flex flex-col justify-center"
+                          className="flex-1 flex flex-col"
                         >
                           <Label>{t.form.niche}</Label>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3">
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3 flex-1 auto-rows-fr">
                             {niches.map((n) => (
                               <button
                                 key={n}
@@ -151,7 +151,7 @@ export function LeadForm() {
                                   setNiche(n);
                                   setErrors((e) => ({ ...e, niche: undefined }));
                                 }}
-                                className={`px-3 py-3 rounded-xl border text-sm transition-all duration-300 ${
+                                className={`w-full h-full min-h-[58px] px-3 py-3 rounded-xl border text-sm transition-all duration-300 ${
                                   niche === n
                                     ? "bg-taboo/15 border-taboo text-bone"
                                     : "bg-carbon-deep border-hairline text-ash hover:text-bone hover:border-hairline-strong"
@@ -172,10 +172,10 @@ export function LeadForm() {
                           animate={{ opacity: 1, x: 0 }}
                           exit={{ opacity: 0, x: -20 }}
                           transition={{ duration: 0.35 }}
-                          className="flex-1 flex flex-col justify-center"
+                          className="flex-1 flex flex-col"
                         >
                           <Label>{t.form.budget}</Label>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 flex-1 auto-rows-fr">
                             {budgets.map((b) => (
                               <button
                                 key={b}
@@ -184,7 +184,7 @@ export function LeadForm() {
                                   setBudget(b);
                                   setErrors((e) => ({ ...e, budget: undefined }));
                                 }}
-                                className={`px-4 py-3 rounded-xl border text-sm text-left transition-all duration-300 ${
+                                className={`w-full h-full min-h-[60px] px-4 py-3 rounded-xl border text-sm text-left transition-all duration-300 ${
                                   budget === b
                                     ? "bg-taboo/15 border-taboo text-bone"
                                     : "bg-carbon-deep border-hairline text-ash hover:text-bone hover:border-hairline-strong"

@@ -13,16 +13,21 @@ export function FAQ() {
   const lines = t.faq.title.split("\n");
 
   return (
-    <section id="faq" className="section-pad relative overflow-hidden">
-      <BrandMark name="curve-right" size={140} className="hidden lg:block absolute top-24 left-[40%] opacity-50 pointer-events-none" rotate={-10} />
+    <section id="faq" className="section-pad relative">
       <div className="container-x relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 lg:items-start">
-          <ScrollReveal className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+          <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start relative">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.faq.eyebrow}</span>
             <h2 className="headline mt-5 text-balance text-[clamp(1.45rem,2.8vw,2.2rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
-          </ScrollReveal>
+            <BrandMark
+              name="curve-right"
+              size={120}
+              className="hidden lg:block absolute -right-2 top-full mt-4 opacity-90 pointer-events-none"
+              rotate={20}
+            />
+          </div>
 
           <div className="lg:col-span-8 lg:pt-2">
             {t.faq.items.map((it, i) => {

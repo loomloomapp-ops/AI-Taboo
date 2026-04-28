@@ -12,6 +12,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
 import { DesktopFloatingWidget } from "@/components/layout/DesktopFloatingWidget";
 import { ExitIntentPopup } from "@/components/layout/ExitIntentPopup";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export default function HomePage() {
   return (
@@ -31,6 +32,7 @@ export default function HomePage() {
       <Footer />
       <MobileStickyCTA />
       <DesktopFloatingWidget />
+      <ScrollToTop />
       <ExitIntentPopup />
     </>
   );
