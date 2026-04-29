@@ -46,7 +46,12 @@ export function LeadForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ niche, budget, telegram: tg.trim().startsWith("@") ? tg.trim() : `@${tg.trim()}` }),
+        body: JSON.stringify({
+          niche,
+          budget,
+          telegram: tg.trim().startsWith("@") ? tg.trim() : `@${tg.trim()}`,
+          source: "main-form",
+        }),
       });
       if (!res.ok) throw new Error("Network error");
       setStatus("success");
