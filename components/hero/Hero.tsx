@@ -8,18 +8,7 @@ import { CountUp } from "@/components/ui/CountUp";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { motion } from "framer-motion";
 
-const platforms = [
-  "TikTok Ads",
-  "Meta Ads",
-  "Google Ads",
-  "Push",
-  "Native",
-  "UAC",
-  "PropellerAds",
-  "MGID",
-  "Snapchat",
-  "Telegram Ads",
-];
+const platforms = ["TikTok Ads", "Meta Ads", "Google Ads"];
 
 export function Hero() {
   const { t } = useLocale();
