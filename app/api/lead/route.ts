@@ -62,23 +62,23 @@ export async function POST(req: Request) {
   const ip = (req.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "—";
   const referer = req.headers.get("referer") || "—";
 
-  const divider = "━━━━━━━━━━━━━━━━━━━━━━━━━━";
+  const divider = "━━━━━━━━━━━━━━━━━━━━━━━━";
 
   const message =
-    `<b>TABOO · TRAFFIC</b> <i>·</i> <b>NEW LEAD</b>\n` +
+    `🟥  <b>TABOO · TRAFFIC</b>  ·  <b>NEW LEAD</b>\n` +
     `<code>${divider}</code>\n` +
     `\n` +
-    `<b>${pad("NICHE")}</b><code>${escapeHtml(niche)}</code>\n` +
-    `<b>${pad("BUDGET")}</b><code>${escapeHtml(budget)}</code>\n` +
-    `<b>${pad("TG")}</b><a href="${tgLink}">${escapeHtml(telegram)}</a>\n` +
-    `<b>${pad("SOURCE")}</b><code>${escapeHtml(source || "main-form")}</code>\n` +
+    `▎ <b>${pad("NICHE")}</b><code>${escapeHtml(niche)}</code>\n` +
+    `▎ <b>${pad("BUDGET")}</b><code>${escapeHtml(budget)}</code>\n` +
+    `▎ <b>${pad("TG")}</b><a href="${tgLink}">${escapeHtml(telegram)}</a>\n` +
+    `▎ <b>${pad("SOURCE")}</b><code>${escapeHtml(source || "main-form")}</code>\n` +
     `\n` +
     `<code>${divider}</code>\n` +
-    `<b>${pad("ID")}</b><code>${id}</code>\n` +
-    `<b>${pad("TIME")}</b><code>${time}</code>\n` +
-    `<b>${pad("IP")}</b><code>${escapeHtml(ip)}</code>\n` +
+    `◇ <b>${pad("ID")}</b><code>${id}</code>\n` +
+    `◇ <b>${pad("TIME")}</b><code>${time}</code>\n` +
+    `◇ <b>${pad("IP")}</b><code>${escapeHtml(ip)}</code>\n` +
     `\n` +
-    `<a href="${tgLink}">→ Відкрити Telegram</a>`;
+    `➜  <a href="${tgLink}"><b>Відкрити Telegram</b></a>`;
 
   if (token && chatId) {
     try {
