@@ -156,7 +156,7 @@ export function LeadForm() {
                                   setNiche(n);
                                   setErrors((e) => ({ ...e, niche: undefined }));
                                 }}
-                                className={`w-full h-full min-h-[58px] px-3 py-3 rounded-xl border text-sm transition-all duration-300 ${
+                                className={`w-full h-full min-h-[58px] px-2 py-3 rounded-xl border text-xs sm:text-sm leading-tight break-words hyphens-auto transition-all duration-300 ${
                                   niche === n
                                     ? "bg-taboo/15 border-taboo text-bone"
                                     : "bg-carbon-deep border-hairline text-ash hover:text-bone hover:border-hairline-strong"
