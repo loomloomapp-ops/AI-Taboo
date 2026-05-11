@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Cases() {
   const { t } = useLocale();
@@ -94,14 +93,6 @@ export function Cases() {
                   {c.primary.map((m, k) => (
                     <div key={k} className="relative">
                       <Metric label={m.label} value={m.value} accent={k === 0} />
-                      {k === 0 && (
-                        <BrandMark
-                          name="arrow-up"
-                          size={42}
-                          className="absolute -top-7 -right-3 opacity-90 pointer-events-none"
-                          rotate={12}
-                        />
-                      )}
                     </div>
                   ))}
                 </div>
