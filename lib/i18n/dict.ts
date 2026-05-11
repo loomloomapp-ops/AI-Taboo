@@ -59,7 +59,6 @@ export const dict = {
           ],
           extra: [
             { label: "Підписок", value: "17 590" },
-            { label: "Бонус", value: "+4 133 zł" },
           ],
         },
         {
@@ -367,7 +366,6 @@ export const dict = {
           ],
           extra: [
             { label: "Подписок", value: "17 590" },
-            { label: "Бонус", value: "+4 133 zł" },
           ],
         },
         {
