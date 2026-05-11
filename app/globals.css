@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600;700;800;900&display=swap");
+
 @font-face {
   font-family: "Akony";
   src: url("/fonts/AKONY.woff2") format("woff2"),
@@ -75,7 +77,7 @@ body {
 }
 
 .font-display {
-  font-family: "Akony", "Cabinet Grotesk", system-ui, sans-serif;
+  font-family: "Unbounded", "Akony", "Cabinet Grotesk", system-ui, sans-serif;
   font-feature-settings: "ss01", "ss02";
 }
 
@@ -227,7 +229,7 @@ body {
 }
 
 .headline {
-  font-family: "Akony", "Cabinet Grotesk", system-ui, sans-serif;
+  font-family: "Unbounded", "Akony", "Cabinet Grotesk", system-ui, sans-serif;
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.95;

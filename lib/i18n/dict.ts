@@ -13,7 +13,7 @@ export const dict = {
     },
     hero: {
       eyebrow: "Performance · Україна + Європа · з 2021",
-      title: "Ллємо\nтам, де інші\nне можуть.",
+      title: "Система замість хаосу.\nРезультат вже за 72 години.",
       sub: "Системний performance-маркетинг для сірих та складних ніш. ROMI-first підхід, мінімум 3 резервні прогріті кабінети, команда з 5 спеціалістів і запуск за 3 дні.",
       ctaPrimary: "Отримати розбір",
       ctaSecondary: "Написати в Telegram",
@@ -32,7 +32,7 @@ export const dict = {
       title: "Ніші, з якими ми вміємо\nпрацювати чесно.",
       sub: "Не беремо все підряд. Беремо те, де є наш досвід, бенчмарки і робочі зв'язки.",
       list: [
-        { name: "Офіси", desc: "Affiliate hubs, CPA-команди, performance-офіси.", cpa: "$8–24" },
+        { name: "Працевлаштування", desc: "Affiliate hubs, CPA-команди, performance-працевлаштування.", cpa: "$8–24" },
         { name: "Табачка", desc: "Vape, pods, e-liquids — multi-geo, hard-to-scale.", cpa: "$3–9" },
         { name: "Adult", desc: "Cam, dating, premium content — TikTok / push / native.", cpa: "$4–12" },
         { name: "Dating", desc: "Mainstream + niche — high LTV gео, soft + hard funnels.", cpa: "$2–6" },
@@ -48,12 +48,97 @@ export const dict = {
       sub: "Імена клієнтів і точні метрики під NDA. Те, що показуємо — це тренди, динаміка, ROMI. Деталі — на дзвінку після заявки.",
       footnote: "Усі цифри підтверджуються screenshot-ами кабінетів на дзвінку.",
       items: [
-        { vertical: "Adult / TikTok", roas: "4.7x", spend: "$148K", leads: "31 240", period: "Q1 2026", trend: [12, 18, 15, 22, 28, 24, 31, 38, 42, 47, 51, 49, 55, 61, 64, 68] },
-        { vertical: "Nutra / Meta", roas: "3.2x", spend: "$92K", leads: "18 670", period: "Q4 2025", trend: [8, 11, 14, 12, 18, 22, 27, 25, 31, 35, 33, 38, 42, 46, 49, 52] },
-        { vertical: "Dating / Push", roas: "5.8x", spend: "$67K", leads: "44 120", period: "2025", trend: [5, 9, 14, 21, 28, 32, 36, 41, 48, 52, 58, 62, 67, 71, 74, 78] },
-        { vertical: "Товарка / Meta", roas: "2.9x", spend: "$210K", leads: "12 480", period: "Q4 2025", trend: [22, 19, 24, 27, 31, 28, 34, 38, 42, 39, 45, 48, 52, 49, 55, 58] },
-        { vertical: "Binary / Google", roas: "6.4x", spend: "$184K", leads: "2 870", period: "2025", trend: [14, 17, 21, 25, 23, 29, 33, 37, 41, 44, 49, 53, 57, 61, 64, 68] },
-        { vertical: "Vape / TikTok", roas: "3.6x", spend: "$58K", leads: "9 410", period: "Q1 2026", trend: [10, 14, 12, 18, 22, 25, 29, 33, 36, 40, 38, 43, 47, 51, 54, 57] },
+        {
+          vertical: "Табачка",
+          image: "/cases/1.jpg",
+          stats: [
+            { label: "Рекламний бюджет", value: "22 341,87$ + 4 133,25 zł" },
+            { label: "Кількість продаж", value: "1 971" },
+            { label: "Кількість підписок", value: "17 590" },
+            { label: "ROAS", value: "235,18%" },
+          ],
+        },
+        {
+          vertical: "Табачка",
+          image: "/cases/2.png",
+          stats: [
+            { label: "Рекламний бюджет", value: "17 218,29$" },
+            { label: "Кількість продаж", value: "2 226" },
+            { label: "Кількість підписок", value: "14 329" },
+            { label: "ROAS", value: "239,53%" },
+          ],
+        },
+        {
+          vertical: "Пошук працівників на працевлаштування",
+          image: "/cases/3.png",
+          stats: [
+            { label: "Рекламний бюджет", value: "7 632,81$" },
+            { label: "Кількість заявок", value: "575" },
+            { label: "Середня вартість заявки", value: "13,83$" },
+            { label: "Кількість закритих", value: "124" },
+            { label: "Середня вартість закритого", value: "61$" },
+          ],
+        },
+        {
+          vertical: "Табачка вейп · 12 місяців",
+          image: "/cases/4.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$18 216,29" },
+            { label: "Кількість підписок", value: "14 329" },
+            { label: "Кількість продаж", value: "5 456" },
+            { label: "ROAS", value: "257%" },
+          ],
+        },
+        {
+          vertical: "Високочекові товари · Товарка Європа",
+          image: "/cases/5.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$8 404,39" },
+            { label: "Кількість лідів", value: "7 957" },
+            { label: "Кількість продаж", value: "37" },
+            { label: "ROAS", value: "174%" },
+          ],
+        },
+        {
+          vertical: "Нутра",
+          image: "/cases/6.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$14 328,42" },
+            { label: "Кількість лідів", value: "9 729" },
+            { label: "Кількість продаж", value: "89" },
+            { label: "ROAS", value: "193%" },
+          ],
+        },
+        {
+          vertical: "TikTok · 8 місяців",
+          image: "/cases/7.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$8 995,12" },
+            { label: "Кількість заявок", value: "2 076" },
+            { label: "Кількість закритих", value: "361" },
+            { label: "Середня ціна закритого", value: "$20,37" },
+          ],
+        },
+        {
+          vertical: "Моделі OnlyFans",
+          image: "/cases/8.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$693" },
+            { label: "Кількість заявок", value: "225" },
+            { label: "Кількість закритих", value: "5" },
+            { label: "Ціна закритої моделі", value: "$138" },
+          ],
+        },
+        {
+          vertical: "Працевлаштування · RU desk (чатери)",
+          image: "/cases/9.png",
+          stats: [
+            { label: "Загальний бюджет", value: "$2 691" },
+            { label: "Кількість заявок", value: "342" },
+            { label: "Кількість закритих", value: "18" },
+            { label: "Ціна закритого", value: "$149,50" },
+          ],
+        },
       ],
     },
     advantages: {
@@ -97,6 +182,7 @@ export const dict = {
         { role: "Media Buyer", desc: "Закуповує трафік, тримає кабінети живими." },
         { role: "Designer", desc: "Статика, банери, лендінг-блоки." },
         { role: "Video Editor / AI", desc: "Монтаж, AI-креативи, діпфейки." },
+        { role: "Technical Specialist", desc: "Відповідає за інтеграцію бота в проєкт, створення лендінгів та будь-які технічні задачі за запитом." },
       ],
     },
     reviews: {
@@ -207,7 +293,7 @@ export const dict = {
     },
     hero: {
       eyebrow: "Performance · Украина + Европа · с 2021",
-      title: "Льём\nтам, где другие\nне могут.",
+      title: "Система вместо хаоса.\nРезультат уже за 72 часа.",
       sub: "Системный performance-маркетинг для серых и сложных ниш. ROMI-first подход, минимум 3 резервных прогретых кабинета, команда из 5 специалистов и запуск за 3 дня.",
       ctaPrimary: "Получить разбор",
       ctaSecondary: "Написать в Telegram",
@@ -226,7 +312,7 @@ export const dict = {
       title: "Ниши, с которыми мы умеем\nработать честно.",
       sub: "Не берём всё подряд. Берём то, где есть наш опыт, бенчмарки и рабочие связки.",
       list: [
-        { name: "Офисы", desc: "Affiliate hubs, CPA-команды, performance-офисы.", cpa: "$8–24" },
+        { name: "Трудоустройство", desc: "Affiliate hubs, CPA-команды, performance-трудоустройство.", cpa: "$8–24" },
         { name: "Табачка", desc: "Vape, pods, e-liquids — multi-geo, hard-to-scale.", cpa: "$3–9" },
         { name: "Adult", desc: "Cam, dating, premium content — TikTok / push / native.", cpa: "$4–12" },
         { name: "Dating", desc: "Mainstream + niche — high LTV гео, soft + hard funnels.", cpa: "$2–6" },
@@ -242,12 +328,97 @@ export const dict = {
       sub: "Имена клиентов и точные метрики под NDA. То, что показываем — тренды, динамика, ROMI. Детали — на звонке после заявки.",
       footnote: "Все цифры подтверждаются скриншотами кабинетов на звонке.",
       items: [
-        { vertical: "Adult / TikTok", roas: "4.7x", spend: "$148K", leads: "31 240", period: "Q1 2026", trend: [12, 18, 15, 22, 28, 24, 31, 38, 42, 47, 51, 49, 55, 61, 64, 68] },
-        { vertical: "Nutra / Meta", roas: "3.2x", spend: "$92K", leads: "18 670", period: "Q4 2025", trend: [8, 11, 14, 12, 18, 22, 27, 25, 31, 35, 33, 38, 42, 46, 49, 52] },
-        { vertical: "Dating / Push", roas: "5.8x", spend: "$67K", leads: "44 120", period: "2025", trend: [5, 9, 14, 21, 28, 32, 36, 41, 48, 52, 58, 62, 67, 71, 74, 78] },
-        { vertical: "Товарка / Meta", roas: "2.9x", spend: "$210K", leads: "12 480", period: "Q4 2025", trend: [22, 19, 24, 27, 31, 28, 34, 38, 42, 39, 45, 48, 52, 49, 55, 58] },
-        { vertical: "Binary / Google", roas: "6.4x", spend: "$184K", leads: "2 870", period: "2025", trend: [14, 17, 21, 25, 23, 29, 33, 37, 41, 44, 49, 53, 57, 61, 64, 68] },
-        { vertical: "Vape / TikTok", roas: "3.6x", spend: "$58K", leads: "9 410", period: "Q1 2026", trend: [10, 14, 12, 18, 22, 25, 29, 33, 36, 40, 38, 43, 47, 51, 54, 57] },
+        {
+          vertical: "Табачка",
+          image: "/cases/1.jpg",
+          stats: [
+            { label: "Рекламный бюджет", value: "22 341,87$ + 4 133,25 zł" },
+            { label: "Количество продаж", value: "1 971" },
+            { label: "Количество подписок", value: "17 590" },
+            { label: "ROAS", value: "235,18%" },
+          ],
+        },
+        {
+          vertical: "Табачка",
+          image: "/cases/2.png",
+          stats: [
+            { label: "Рекламный бюджет", value: "17 218,29$" },
+            { label: "Количество продаж", value: "2 226" },
+            { label: "Количество подписок", value: "14 329" },
+            { label: "ROAS", value: "239,53%" },
+          ],
+        },
+        {
+          vertical: "Поиск сотрудников на трудоустройство",
+          image: "/cases/3.png",
+          stats: [
+            { label: "Рекламный бюджет", value: "7 632,81$" },
+            { label: "Количество заявок", value: "575" },
+            { label: "Средняя стоимость заявки", value: "13,83$" },
+            { label: "Количество закрытых", value: "124" },
+            { label: "Средняя стоимость закрытого", value: "61$" },
+          ],
+        },
+        {
+          vertical: "Табачка вейп · 12 месяцев",
+          image: "/cases/4.png",
+          stats: [
+            { label: "Общий бюджет", value: "$18 216,29" },
+            { label: "Количество подписок", value: "14 329" },
+            { label: "Количество продаж", value: "5 456" },
+            { label: "ROAS", value: "257%" },
+          ],
+        },
+        {
+          vertical: "Высокочековые товары · Товарка Европа",
+          image: "/cases/5.png",
+          stats: [
+            { label: "Общий бюджет", value: "$8 404,39" },
+            { label: "Количество лидов", value: "7 957" },
+            { label: "Количество продаж", value: "37" },
+            { label: "ROAS", value: "174%" },
+          ],
+        },
+        {
+          vertical: "Нутра",
+          image: "/cases/6.png",
+          stats: [
+            { label: "Общий бюджет", value: "$14 328,42" },
+            { label: "Количество лидов", value: "9 729" },
+            { label: "Количество продаж", value: "89" },
+            { label: "ROAS", value: "193%" },
+          ],
+        },
+        {
+          vertical: "TikTok · 8 месяцев",
+          image: "/cases/7.png",
+          stats: [
+            { label: "Общий бюджет", value: "$8 995,12" },
+            { label: "Количество заявок", value: "2 076" },
+            { label: "Количество закрытых", value: "361" },
+            { label: "Средняя цена закрытого", value: "$20,37" },
+          ],
+        },
+        {
+          vertical: "Модели OnlyFans",
+          image: "/cases/8.png",
+          stats: [
+            { label: "Общий бюджет", value: "$693" },
+            { label: "Количество заявок", value: "225" },
+            { label: "Количество закрытых", value: "5" },
+            { label: "Цена закрытой модели", value: "$138" },
+          ],
+        },
+        {
+          vertical: "Трудоустройство · RU desk (чатеры)",
+          image: "/cases/9.png",
+          stats: [
+            { label: "Общий бюджет", value: "$2 691" },
+            { label: "Количество заявок", value: "342" },
+            { label: "Количество закрытых", value: "18" },
+            { label: "Цена закрытого", value: "$149,50" },
+          ],
+        },
       ],
     },
     advantages: {
@@ -291,6 +462,7 @@ export const dict = {
         { role: "Media Buyer", desc: "Закупает трафик, держит кабинеты живыми." },
         { role: "Designer", desc: "Статика, баннеры, лендинг-блоки." },
         { role: "Video Editor / AI", desc: "Монтаж, AI-креативы, дипфейки." },
+        { role: "Technical Specialist", desc: "Отвечает за интеграцию бота в проект, создание лендингов и любые технические задачи по запросу." },
       ],
     },
     reviews: {

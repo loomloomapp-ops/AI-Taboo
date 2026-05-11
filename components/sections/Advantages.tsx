@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { BrandMark } from "@/components/ui/BrandMark";
 
-const teamPhotos = ["/team/pm.png", "/team/lead.png", "/team/buyer.png", "/team/designer.png", "/team/ai.png"];
+const teamPhotos = ["/team/pm.png", "/team/lead.png", "/team/buyer.png", "/team/designer.png", "/team/ai.png", "/team/tech.png"];
 
 export function Advantages() {
   const { t } = useLocale();
@@ -64,10 +64,10 @@ export function Advantages() {
           <div className="mt-14 lg:mt-20 relative">
             <BrandMark name="star" size={70} className="absolute -top-10 right-0 sm:right-8 opacity-90 pointer-events-none" rotate={-8} />
             <div className="flex items-baseline justify-between mb-6">
-              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">TEAM / 5 SPECIALISTS</span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">TEAM / 6 SPECIALISTS</span>
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ash-dim">PER PROJECT</span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
               {t.advantages.team.map((m, i) => (
                 <div
                   key={i}

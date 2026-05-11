@@ -17,7 +17,7 @@ const config: Config = {
         "hairline-strong": "rgba(255,255,255,0.14)",
       },
       fontFamily: {
-        display: ['"Akony"', '"Cabinet Grotesk"', "system-ui", "sans-serif"],
+        display: ['"Unbounded"', '"Akony"', '"Cabinet Grotesk"', "system-ui", "sans-serif"],
         body: ['"Involve"', "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', '"Geist Mono"', "ui-monospace", "monospace"],
       },

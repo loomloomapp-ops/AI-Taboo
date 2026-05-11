@@ -7,7 +7,7 @@ import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { BrandMark } from "@/components/ui/BrandMark";
 
-const screenshots = Array.from({ length: 8 }, (_, i) => `/reviews/tg-${i + 1}.jpeg`);
+const screenshots = Array.from({ length: 5 }, (_, i) => `/reviews/review-${i + 1}.jpg`);
 
 export function Reviews() {
   const { t } = useLocale();

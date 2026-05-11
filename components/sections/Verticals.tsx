@@ -25,7 +25,7 @@ export function Verticals() {
     <section id="verticals" className="section-pad relative overflow-hidden">
       <BrandMark name="strokes" size={180} className="hidden lg:block absolute right-0 top-12 opacity-25 pointer-events-none" rotate={-12} />
       <div className="container-x relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12 lg:mb-16 lg:items-stretch">
           <ScrollReveal className="lg:col-span-7">
             <span className="eyebrow"><span className="eyebrow-dot" />{t.verticals.eyebrow}</span>
             <h2 className="headline mt-5 text-balance text-[clamp(1.55rem,3.6vw,2.85rem)]">
@@ -36,7 +36,7 @@ export function Verticals() {
               ))}
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.15} className="lg:col-span-5 lg:pt-4">
+          <ScrollReveal delay={0.15} className="lg:col-span-5 lg:flex lg:flex-col lg:justify-end lg:h-full">
             <p className="text-ash text-base sm:text-lg leading-relaxed">{t.verticals.sub}</p>
           </ScrollReveal>
         </div>

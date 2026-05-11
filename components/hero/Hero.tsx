@@ -3,7 +3,7 @@
 import { useLocale } from "@/lib/i18n/context";
 import { TELEGRAM_URL } from "@/lib/i18n/dict";
 import { HeroDashboard } from "./HeroDashboard";
-import { TelegramIcon, ArrowUpRight } from "@/components/ui/ArrowIcon";
+import { TelegramIcon, ArrowUpRight, InstagramIcon } from "@/components/ui/ArrowIcon";
 import { CountUp } from "@/components/ui/CountUp";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { motion } from "framer-motion";
@@ -75,11 +75,15 @@ export function Hero() {
                 <TelegramIcon size={14} />
                 {t.hero.ctaSecondary}
               </a>
-              <BrandMark
-                name="curve-left"
-                size={92}
-                className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 ml-3 lg:ml-5 opacity-95 pointer-events-none"
-              />
+              <a
+                href="https://www.instagram.com/taboo.agency?igsh=MXFzZzFpamdjaWFvYw=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="btn-ghost !p-0 w-12 h-12 justify-center"
+              >
+                <InstagramIcon size={18} />
+              </a>
             </motion.div>
 
             <motion.div

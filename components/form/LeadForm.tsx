@@ -8,7 +8,7 @@ import { ArrowUpRight, TelegramIcon } from "@/components/ui/ArrowIcon";
 import { BrandMark } from "@/components/ui/BrandMark";
 import { motion, AnimatePresence } from "framer-motion";
 
-const niches = ["Офіси", "Табачка", "Adult", "Dating", "Товарка", "Nutra", "Sex shops", "Binary options", "Інше"];
+const niches = ["Працевлаштування", "Табачка", "Adult", "Dating", "Товарка", "Nutra", "Sex shops", "Binary options", "Інше"];
 const budgets = ["до $1K", "$1K — $5K", "$5K — $20K", "$20K — $50K", "$50K+"];
 
 type Status = "idle" | "sending" | "success" | "error";

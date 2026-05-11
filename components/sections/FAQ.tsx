@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { PlusIcon } from "@/components/ui/ArrowIcon";
-import { BrandMark } from "@/components/ui/BrandMark";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function FAQ() {
@@ -21,12 +20,6 @@ export function FAQ() {
             <h2 className="headline mt-5 text-balance text-[clamp(1.45rem,2.8vw,2.2rem)]">
               {lines.map((l, i) => (<span key={i} className="block">{l}</span>))}
             </h2>
-            <BrandMark
-              name="curve-right"
-              size={120}
-              className="hidden lg:block absolute -right-2 top-full mt-4 opacity-90 pointer-events-none"
-              rotate={20}
-            />
           </div>
 
           <div className="lg:col-span-8 lg:pt-2">

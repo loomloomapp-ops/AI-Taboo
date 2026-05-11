@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 import { useLocale } from "@/lib/i18n/context";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Cases() {
   const { t } = useLocale();
@@ -11,7 +11,6 @@ export function Cases() {
   const items = t.cases.items;
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const [revealed, setRevealed] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const el = scrollerRef.current;
@@ -52,68 +51,49 @@ export function Cases() {
           ref={scrollerRef}
           className="no-scrollbar flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pt-3 pb-6 px-[max(1rem,calc((100vw-1440px)/2+1rem))] sm:px-[max(1rem,calc((100vw-1440px)/2+4rem))]"
         >
-          {items.map((c, i) => {
-            const isRevealed = revealed[i];
-            const trendMax = Math.max(...c.trend);
-            return (
-              <div
-                key={i}
-                onMouseEnter={() => setRevealed((r) => ({ ...r, [i]: true }))}
-                onClick={() => setRevealed((r) => ({ ...r, [i]: !r[i] }))}
-                className="snap-start shrink-0 w-[85vw] sm:w-[60vw] lg:w-[42vw] xl:w-[32vw] max-w-[520px] cursor-pointer group"
-              >
-                <div className="relative rounded-card-lg border border-hairline bg-carbon p-6 sm:p-7 shadow-card-inset overflow-hidden transition-all duration-500 ease-spring group-hover:border-taboo/50 group-hover:bg-carbon-soft">
-                  <div className="absolute -top-24 -right-24 w-72 h-72 glow-red opacity-30 pointer-events-none transition-opacity duration-500 group-hover:opacity-70" aria-hidden />
-                  <div className="absolute inset-0 rounded-card-lg pointer-events-none ring-1 ring-inset ring-taboo/0 group-hover:ring-taboo/30 transition-all duration-500" aria-hidden />
-                  <div className="flex items-center justify-between mb-4 relative">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim">
-                      CASE / {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-taboo">{t.nda}</span>
-                  </div>
+          {items.map((c, i) => (
+            <div
+              key={i}
+              className="snap-start shrink-0 w-[85vw] sm:w-[60vw] lg:w-[42vw] xl:w-[32vw] max-w-[520px] group"
+            >
+              <div className="relative rounded-card-lg border border-hairline bg-carbon p-6 sm:p-7 shadow-card-inset overflow-hidden transition-all duration-500 ease-spring group-hover:border-taboo/50 group-hover:bg-carbon-soft h-full flex flex-col">
+                <div className="absolute -top-24 -right-24 w-72 h-72 glow-red opacity-30 pointer-events-none transition-opacity duration-500 group-hover:opacity-70" aria-hidden />
+                <div className="flex items-center justify-between mb-4 relative">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim">
+                    CASE / {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-taboo">{t.nda}</span>
+                </div>
 
-                  <div className="font-display uppercase tracking-tighter2 text-xl sm:text-2xl text-bone mb-1 relative">
-                    {c.vertical}
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ash-dim mb-6 relative">{c.period}</div>
+                <div className="font-display uppercase tracking-tighter2 text-lg sm:text-xl text-bone mb-4 relative leading-tight">
+                  {c.vertical}
+                </div>
 
-                  <div className="grid grid-cols-3 gap-3 mb-6 relative">
-                    <div className="relative">
-                      <Metric label="ROAS" value={c.roas} blurred={!isRevealed} accent />
-                      {isRevealed && (
-                        <BrandMark
-                          name="arrow-up"
-                          size={42}
-                          className="absolute -top-7 -right-3 opacity-90 pointer-events-none"
-                          rotate={12}
-                        />
-                      )}
-                    </div>
-                    <Metric label="SPEND" value={c.spend} blurred={!isRevealed} />
-                    <Metric label="LEADS" value={c.leads} blurred={!isRevealed} />
-                  </div>
-
-                  <div className="rounded-2xl border border-hairline bg-carbon-deep/60 p-4 relative">
-                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim mb-3">TREND · 16W</div>
-                    <div className="flex items-end gap-1 h-20">
-                      {c.trend.map((v, k) => (
-                        <div
-                          key={k}
-                          className="flex-1 rounded-t-sm bg-gradient-to-t from-taboo-blood to-taboo"
-                          style={{ height: `${(v / trendMax) * 100}%`, opacity: 0.4 + (v / trendMax) * 0.6 }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim relative">
-                    <span>CLIENT · <span className="redacted">REDACTED</span></span>
-                    <span className="text-taboo">{isRevealed ? "[ DETAILS ON CALL ]" : "[ HOVER / TAP ]"}</span>
+                <div className="relative rounded-2xl border border-hairline bg-carbon-deep/60 overflow-hidden mb-5">
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={c.image}
+                      alt={c.vertical}
+                      fill
+                      sizes="(max-width:768px) 85vw, (max-width:1280px) 42vw, 520px"
+                      className="object-cover"
+                    />
                   </div>
                 </div>
+
+                <ul className="relative flex flex-col divide-y divide-hairline border-y border-hairline">
+                  {c.stats.map((s, k) => (
+                    <li key={k} className="flex items-center justify-between gap-3 py-2.5">
+                      <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] text-ash-dim">
+                        {s.label}
+                      </span>
+                      <span className="kpi-num text-sm sm:text-base text-bone text-right">{s.value}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         <div className="container-x mt-6 flex items-center justify-between">
@@ -142,19 +122,5 @@ export function Cases() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Metric({ label, value, blurred, accent }: { label: string; value: string; blurred: boolean; accent?: boolean }) {
-  return (
-    <div className="rounded-2xl border border-hairline bg-carbon-deep/60 p-3">
-      <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-ash-dim mb-1.5">{label}</div>
-      <div
-        className={`kpi-num text-base sm:text-lg ${accent ? "text-taboo" : "text-bone"} transition-all duration-500`}
-        style={{ filter: blurred ? "blur(7px)" : "blur(0px)" }}
-      >
-        {value}
-      </div>
-    </div>
   );
 }
