@@ -62,7 +62,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/taboo.traffic" target="_blank" rel="noopener noreferrer" className="text-ash hover:text-bone transition-colors">
+                <a href="https://www.instagram.com/taboo.agency?igsh=MXFzZzFpamdjaWFvYw==" target="_blank" rel="noopener noreferrer" className="text-ash hover:text-bone transition-colors">
                   Instagram
                 </a>
               </li>
