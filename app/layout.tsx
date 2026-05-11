@@ -1,7 +1,15 @@
 import type { Metadata, Viewport } from "next";
+import { Unbounded } from "next/font/google";
 import "./globals.css";
 import { LocaleProvider } from "@/lib/i18n/context";
 import { Preloader } from "@/components/layout/Preloader";
+
+const unbounded = Unbounded({
+  subsets: ["latin", "cyrillic"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-unbounded",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taboo-traffic.agency"),
@@ -58,7 +66,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="uk" className="bg-carbon-deep">
+    <html lang="uk" className={`bg-carbon-deep ${unbounded.variable}`}>
       <body className="bg-carbon-deep text-bone antialiased">
         <LocaleProvider>
           <Preloader />

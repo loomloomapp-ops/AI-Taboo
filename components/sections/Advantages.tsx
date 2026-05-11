@@ -88,7 +88,7 @@ export function Advantages() {
                     </span>
                   </div>
                   <div className="relative p-4 sm:p-5 -mt-1">
-                    <div className="font-display uppercase tracking-tighter2 text-sm sm:text-base lg:text-lg text-bone leading-tight">
+                    <div className="font-display uppercase tracking-tighter2 text-[13px] sm:text-sm lg:text-[15px] text-bone leading-[1.1] break-words hyphens-auto">
                       {m.role}
                     </div>
                     <div className="mt-1.5 text-[11px] sm:text-xs text-ash leading-relaxed">{m.desc}</div>

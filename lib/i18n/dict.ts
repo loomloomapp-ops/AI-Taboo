@@ -50,93 +50,121 @@ export const dict = {
       items: [
         {
           vertical: "Табачка",
+          period: "Multi-geo · 1 місяць",
           image: "/cases/1.jpg",
-          stats: [
-            { label: "Рекламний бюджет", value: "22 341,87$ + 4 133,25 zł" },
-            { label: "Кількість продаж", value: "1 971" },
-            { label: "Кількість підписок", value: "17 590" },
-            { label: "ROAS", value: "235,18%" },
+          primary: [
+            { label: "ROAS", value: "235%" },
+            { label: "SPEND", value: "$22.3K" },
+            { label: "SALES", value: "1 971" },
+          ],
+          extra: [
+            { label: "Підписок", value: "17 590" },
+            { label: "Бонус", value: "+4 133 zł" },
           ],
         },
         {
           vertical: "Табачка",
+          period: "Multi-geo · Scale",
           image: "/cases/2.png",
-          stats: [
-            { label: "Рекламний бюджет", value: "17 218,29$" },
-            { label: "Кількість продаж", value: "2 226" },
-            { label: "Кількість підписок", value: "14 329" },
-            { label: "ROAS", value: "239,53%" },
+          primary: [
+            { label: "ROAS", value: "240%" },
+            { label: "SPEND", value: "$17.2K" },
+            { label: "SALES", value: "2 226" },
+          ],
+          extra: [
+            { label: "Підписок", value: "14 329" },
           ],
         },
         {
-          vertical: "Пошук працівників на працевлаштування",
+          vertical: "Працевлаштування",
+          period: "Hiring funnel · Офлайн",
           image: "/cases/3.png",
-          stats: [
-            { label: "Рекламний бюджет", value: "7 632,81$" },
-            { label: "Кількість заявок", value: "575" },
-            { label: "Середня вартість заявки", value: "13,83$" },
-            { label: "Кількість закритих", value: "124" },
-            { label: "Середня вартість закритого", value: "61$" },
+          primary: [
+            { label: "CPA", value: "$13.83" },
+            { label: "SPEND", value: "$7.6K" },
+            { label: "LEADS", value: "575" },
+          ],
+          extra: [
+            { label: "Закритих", value: "124" },
+            { label: "Ціна закритого", value: "$61" },
           ],
         },
         {
-          vertical: "Табачка вейп · 12 місяців",
+          vertical: "Vape / Tobacco",
+          period: "12 місяців · LTV",
           image: "/cases/4.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$18 216,29" },
-            { label: "Кількість підписок", value: "14 329" },
-            { label: "Кількість продаж", value: "5 456" },
+          primary: [
             { label: "ROAS", value: "257%" },
+            { label: "SPEND", value: "$18.2K" },
+            { label: "SALES", value: "5 456" },
+          ],
+          extra: [
+            { label: "Підписок", value: "14 329" },
           ],
         },
         {
-          vertical: "Високочекові товари · Товарка Європа",
+          vertical: "Високочек · EU",
+          period: "Товарка Європа",
           image: "/cases/5.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$8 404,39" },
-            { label: "Кількість лідів", value: "7 957" },
-            { label: "Кількість продаж", value: "37" },
+          primary: [
             { label: "ROAS", value: "174%" },
+            { label: "SPEND", value: "$8.4K" },
+            { label: "LEADS", value: "7 957" },
+          ],
+          extra: [
+            { label: "Продажі", value: "37" },
           ],
         },
         {
-          vertical: "Нутра",
+          vertical: "Nutra / Meta",
+          period: "Beauty · COD",
           image: "/cases/6.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$14 328,42" },
-            { label: "Кількість лідів", value: "9 729" },
-            { label: "Кількість продаж", value: "89" },
+          primary: [
             { label: "ROAS", value: "193%" },
+            { label: "SPEND", value: "$14.3K" },
+            { label: "LEADS", value: "9 729" },
+          ],
+          extra: [
+            { label: "Продажі", value: "89" },
           ],
         },
         {
-          vertical: "TikTok · 8 місяців",
+          vertical: "TikTok",
+          period: "8 місяців",
           image: "/cases/7.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$8 995,12" },
-            { label: "Кількість заявок", value: "2 076" },
-            { label: "Кількість закритих", value: "361" },
-            { label: "Середня ціна закритого", value: "$20,37" },
+          primary: [
+            { label: "CPA", value: "$20.37" },
+            { label: "SPEND", value: "$9K" },
+            { label: "LEADS", value: "2 076" },
+          ],
+          extra: [
+            { label: "Закритих", value: "361" },
           ],
         },
         {
-          vertical: "Моделі OnlyFans",
+          vertical: "OnlyFans Models",
+          period: "Sourcing · Тест",
           image: "/cases/8.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$693" },
-            { label: "Кількість заявок", value: "225" },
-            { label: "Кількість закритих", value: "5" },
-            { label: "Ціна закритої моделі", value: "$138" },
+          primary: [
+            { label: "CPM", value: "$138" },
+            { label: "SPEND", value: "$693" },
+            { label: "LEADS", value: "225" },
+          ],
+          extra: [
+            { label: "Підписано", value: "5" },
           ],
         },
         {
-          vertical: "Працевлаштування · RU desk (чатери)",
+          vertical: "RU desk · Чатери",
+          period: "Працевлаштування",
           image: "/cases/9.png",
-          stats: [
-            { label: "Загальний бюджет", value: "$2 691" },
-            { label: "Кількість заявок", value: "342" },
-            { label: "Кількість закритих", value: "18" },
-            { label: "Ціна закритого", value: "$149,50" },
+          primary: [
+            { label: "CPA", value: "$149.50" },
+            { label: "SPEND", value: "$2.7K" },
+            { label: "LEADS", value: "342" },
+          ],
+          extra: [
+            { label: "Закритих", value: "18" },
           ],
         },
       ],
@@ -330,93 +358,121 @@ export const dict = {
       items: [
         {
           vertical: "Табачка",
+          period: "Multi-geo · 1 месяц",
           image: "/cases/1.jpg",
-          stats: [
-            { label: "Рекламный бюджет", value: "22 341,87$ + 4 133,25 zł" },
-            { label: "Количество продаж", value: "1 971" },
-            { label: "Количество подписок", value: "17 590" },
-            { label: "ROAS", value: "235,18%" },
+          primary: [
+            { label: "ROAS", value: "235%" },
+            { label: "SPEND", value: "$22.3K" },
+            { label: "SALES", value: "1 971" },
+          ],
+          extra: [
+            { label: "Подписок", value: "17 590" },
+            { label: "Бонус", value: "+4 133 zł" },
           ],
         },
         {
           vertical: "Табачка",
+          period: "Multi-geo · Scale",
           image: "/cases/2.png",
-          stats: [
-            { label: "Рекламный бюджет", value: "17 218,29$" },
-            { label: "Количество продаж", value: "2 226" },
-            { label: "Количество подписок", value: "14 329" },
-            { label: "ROAS", value: "239,53%" },
+          primary: [
+            { label: "ROAS", value: "240%" },
+            { label: "SPEND", value: "$17.2K" },
+            { label: "SALES", value: "2 226" },
+          ],
+          extra: [
+            { label: "Подписок", value: "14 329" },
           ],
         },
         {
-          vertical: "Поиск сотрудников на трудоустройство",
+          vertical: "Трудоустройство",
+          period: "Hiring funnel · Офлайн",
           image: "/cases/3.png",
-          stats: [
-            { label: "Рекламный бюджет", value: "7 632,81$" },
-            { label: "Количество заявок", value: "575" },
-            { label: "Средняя стоимость заявки", value: "13,83$" },
-            { label: "Количество закрытых", value: "124" },
-            { label: "Средняя стоимость закрытого", value: "61$" },
+          primary: [
+            { label: "CPA", value: "$13.83" },
+            { label: "SPEND", value: "$7.6K" },
+            { label: "LEADS", value: "575" },
+          ],
+          extra: [
+            { label: "Закрытых", value: "124" },
+            { label: "Цена закрытого", value: "$61" },
           ],
         },
         {
-          vertical: "Табачка вейп · 12 месяцев",
+          vertical: "Vape / Tobacco",
+          period: "12 месяцев · LTV",
           image: "/cases/4.png",
-          stats: [
-            { label: "Общий бюджет", value: "$18 216,29" },
-            { label: "Количество подписок", value: "14 329" },
-            { label: "Количество продаж", value: "5 456" },
+          primary: [
             { label: "ROAS", value: "257%" },
+            { label: "SPEND", value: "$18.2K" },
+            { label: "SALES", value: "5 456" },
+          ],
+          extra: [
+            { label: "Подписок", value: "14 329" },
           ],
         },
         {
-          vertical: "Высокочековые товары · Товарка Европа",
+          vertical: "Высокий чек · EU",
+          period: "Товарка Европа",
           image: "/cases/5.png",
-          stats: [
-            { label: "Общий бюджет", value: "$8 404,39" },
-            { label: "Количество лидов", value: "7 957" },
-            { label: "Количество продаж", value: "37" },
+          primary: [
             { label: "ROAS", value: "174%" },
+            { label: "SPEND", value: "$8.4K" },
+            { label: "LEADS", value: "7 957" },
+          ],
+          extra: [
+            { label: "Продажи", value: "37" },
           ],
         },
         {
-          vertical: "Нутра",
+          vertical: "Nutra / Meta",
+          period: "Beauty · COD",
           image: "/cases/6.png",
-          stats: [
-            { label: "Общий бюджет", value: "$14 328,42" },
-            { label: "Количество лидов", value: "9 729" },
-            { label: "Количество продаж", value: "89" },
+          primary: [
             { label: "ROAS", value: "193%" },
+            { label: "SPEND", value: "$14.3K" },
+            { label: "LEADS", value: "9 729" },
+          ],
+          extra: [
+            { label: "Продажи", value: "89" },
           ],
         },
         {
-          vertical: "TikTok · 8 месяцев",
+          vertical: "TikTok",
+          period: "8 месяцев",
           image: "/cases/7.png",
-          stats: [
-            { label: "Общий бюджет", value: "$8 995,12" },
-            { label: "Количество заявок", value: "2 076" },
-            { label: "Количество закрытых", value: "361" },
-            { label: "Средняя цена закрытого", value: "$20,37" },
+          primary: [
+            { label: "CPA", value: "$20.37" },
+            { label: "SPEND", value: "$9K" },
+            { label: "LEADS", value: "2 076" },
+          ],
+          extra: [
+            { label: "Закрытых", value: "361" },
           ],
         },
         {
-          vertical: "Модели OnlyFans",
+          vertical: "OnlyFans Models",
+          period: "Sourcing · Тест",
           image: "/cases/8.png",
-          stats: [
-            { label: "Общий бюджет", value: "$693" },
-            { label: "Количество заявок", value: "225" },
-            { label: "Количество закрытых", value: "5" },
-            { label: "Цена закрытой модели", value: "$138" },
+          primary: [
+            { label: "CPM", value: "$138" },
+            { label: "SPEND", value: "$693" },
+            { label: "LEADS", value: "225" },
+          ],
+          extra: [
+            { label: "Подписано", value: "5" },
           ],
         },
         {
-          vertical: "Трудоустройство · RU desk (чатеры)",
+          vertical: "RU desk · Чатеры",
+          period: "Трудоустройство",
           image: "/cases/9.png",
-          stats: [
-            { label: "Общий бюджет", value: "$2 691" },
-            { label: "Количество заявок", value: "342" },
-            { label: "Количество закрытых", value: "18" },
-            { label: "Цена закрытого", value: "$149,50" },
+          primary: [
+            { label: "CPA", value: "$149.50" },
+            { label: "SPEND", value: "$2.7K" },
+            { label: "LEADS", value: "342" },
+          ],
+          extra: [
+            { label: "Закрытых", value: "18" },
           ],
         },
       ],
