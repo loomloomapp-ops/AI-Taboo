@@ -210,7 +210,7 @@ export const dict = {
         { role: "Media Buyer", desc: "Закуповує трафік, тримає кабінети живими." },
         { role: "Designer", desc: "Статика, банери, лендінг-блоки." },
         { role: "Video Editor / AI", desc: "Монтаж, AI-креативи, діпфейки." },
-        { role: "Technical Specialist", desc: "Відповідає за інтеграцію бота в проєкт, створення лендінгів та будь-які технічні задачі за запитом." },
+        { role: "Technical Specialist", desc: "Відповідає за інтеграцію бота, лендінги та технічні задачі." },
       ],
     },
     reviews: {
@@ -518,7 +518,7 @@ export const dict = {
         { role: "Media Buyer", desc: "Закупает трафик, держит кабинеты живыми." },
         { role: "Designer", desc: "Статика, баннеры, лендинг-блоки." },
         { role: "Video Editor / AI", desc: "Монтаж, AI-креативы, дипфейки." },
-        { role: "Technical Specialist", desc: "Отвечает за интеграцию бота в проект, создание лендингов и любые технические задачи по запросу." },
+        { role: "Technical Specialist", desc: "Отвечает за интеграцию бота, лендинги и технические задачи." },
       ],
     },
     reviews: {
