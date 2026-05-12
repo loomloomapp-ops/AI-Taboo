@@ -145,7 +145,7 @@ export const dict = {
           period: "Sourcing · Тест",
           image: "/cases/8.png",
           primary: [
-            { label: "CPM", value: "$138" },
+            { label: "CPA", value: "$138" },
             { label: "SPEND", value: "$693" },
             { label: "LEADS", value: "225" },
           ],
@@ -452,7 +452,7 @@ export const dict = {
           period: "Sourcing · Тест",
           image: "/cases/8.png",
           primary: [
-            { label: "CPM", value: "$138" },
+            { label: "CPA", value: "$138" },
             { label: "SPEND", value: "$693" },
             { label: "LEADS", value: "225" },
           ],

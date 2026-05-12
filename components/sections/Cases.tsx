@@ -133,9 +133,9 @@ export function Cases() {
                   </ul>
                 )}
 
-                <div className="mt-auto flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ash-dim relative">
-                  <span>CLIENT · <span className="redacted">REDACTED</span></span>
-                  <span className="text-taboo">[ DETAILS ON CALL ]</span>
+                <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3 font-mono text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-ash-dim relative">
+                  <span className="whitespace-nowrap">CLIENT · <span className="redacted">REDACTED</span></span>
+                  <span className="text-taboo whitespace-nowrap">[ DETAILS ON CALL ]</span>
                 </div>
               </div>
             </div>
